@@ -11,7 +11,7 @@ spec:
     path: overlays/machine-1
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: your-namespace
+    namespace: iot-gw-stack
   syncPolicy:
     automated:
       prune: true
