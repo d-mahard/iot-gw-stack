@@ -1,0 +1,7 @@
+input:
+  http_server:
+    address: 0.0.0.0:4195
+    path: /post
+    allowed_methods: [ POST ]
+output:
+  stdout: {}

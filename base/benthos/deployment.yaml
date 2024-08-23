@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: benthos
+  labels:
+    app: benthos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: benthos
+  template:
+    metadata:
+      labels:
+        app: benthos
+    spec:
+      containers:
+      - name: benthos
+        image: ghcr.io/united-manufacturing-hub/benthos-umh:0.3.13
+        ports:
+        - containerPort: 4195  # HTTP server port for Benthos
+        volumeMounts:
+        - name: benthos-config
+          mountPath: /benthos.yaml
+          subPath: benthos.yaml
+      volumes:
+      - name: benthos-config
+        configMap:
+          name: benthos-config
