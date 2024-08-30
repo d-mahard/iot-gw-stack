@@ -13,5 +13,5 @@ configMapGenerator:
     # literals:
     #   - ENV_SPECIFIC_VARIABLE=value-specific-to-machine-1
 
-patchesStrategicMerge:
+patches:
   - specific/benthos-patch.yaml
