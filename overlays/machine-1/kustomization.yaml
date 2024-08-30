@@ -14,4 +14,7 @@ configMapGenerator:
     #   - ENV_SPECIFIC_VARIABLE=value-specific-to-machine-1
 
 patches:
-  - specific/benthos-patch.yaml
+  - path: specific/benthos-patch.yaml
+    target:
+      kind: Deployment
+      name: benthos
