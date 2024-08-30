@@ -16,3 +16,11 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  resourceCustomizations:
+    v1/Namespace:
+      action: Apply
+      manifest: |
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: iot-gw-stack
